@@ -1,0 +1,50 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build debug",
+            "type": "shell", 
+            "command": "C:/msys64/ucrt64/bin/x86_64-w64-mingw32-g++.exe",  
+            "args": [
+                "-g",                        
+                "${file}",                     
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.exe",
+                "-I", "C:/msys64/ucrt64/include",  
+                "-L", "C:/msys64/ucrt64/lib",      
+                "-lraylib",
+                "-lopengl32",
+                "-lgdi32",
+                "-lwinmm",
+                "-static-libgcc",
+                "-static-libstdc++"           
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "build release",
+            "type": "shell",
+            "command": "C:/msys64/ucrt64/bin/x86_64-w64-mingw32-g++.exe",
+            "args": [
+                "-O2",                       
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.exe",
+                "-I", "C:/msys64/ucrt64/include",
+                "-L", "C:/msys64/ucrt64/lib",
+                "-lraylib",
+                "-lopengl32",
+                "-lgdi32",
+                "-lwinmm",
+                "-static-libgcc",
+                "-static-libstdc++"      
+            ],
+            "group": "build",
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}
