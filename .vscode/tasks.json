@@ -2,23 +2,35 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "embed assets",
+            "type": "shell",
+            "command": "py",
+            "args": ["${workspaceFolder}/embed.py"],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
             "label": "build debug",
-            "type": "shell", 
-            "command": "C:/msys64/ucrt64/bin/x86_64-w64-mingw32-g++.exe",  
+            "type": "shell",
+            "command": "C:/msys64/ucrt64/bin/x86_64-w64-mingw32-g++.exe",
             "args": [
-                "-g",                        
-                "${file}",                     
+                "-g",
+                "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}.exe",
-                "-I", "C:/msys64/ucrt64/include",  
-                "-L", "C:/msys64/ucrt64/lib",      
+                "-I", "C:/msys64/ucrt64/include",
+                "-I", "${workspaceFolder}/src",
+                "-L", "C:/msys64/ucrt64/lib",
                 "-lraylib",
                 "-lopengl32",
                 "-lgdi32",
                 "-lwinmm",
                 "-static-libgcc",
-                "-static-libstdc++"           
+                "-static-libstdc++"
             ],
+            "dependsOn": ["embed assets"],
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -30,19 +42,21 @@
             "type": "shell",
             "command": "C:/msys64/ucrt64/bin/x86_64-w64-mingw32-g++.exe",
             "args": [
-                "-O2",                       
+                "-O2",
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}.exe",
                 "-I", "C:/msys64/ucrt64/include",
+                "-I", "${workspaceFolder}/src",
                 "-L", "C:/msys64/ucrt64/lib",
                 "-lraylib",
                 "-lopengl32",
                 "-lgdi32",
                 "-lwinmm",
                 "-static-libgcc",
-                "-static-libstdc++"      
+                "-static-libstdc++"
             ],
+            "dependsOn": ["embed assets"],
             "group": "build",
             "problemMatcher": ["$gcc"]
         }
