@@ -17,9 +17,9 @@
             "command": "C:/msys64/ucrt64/bin/x86_64-w64-mingw32-g++.exe",
             "args": [
                 "-g",
-                "${file}",
+                "${workspaceFolder}/src/main.cpp",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}.exe",
+                "${workspaceFolder}/src/main.exe",
                 "-I", "C:/msys64/ucrt64/include",
                 "-I", "${workspaceFolder}/src",
                 "-L", "C:/msys64/ucrt64/lib",
@@ -43,9 +43,9 @@
             "command": "C:/msys64/ucrt64/bin/x86_64-w64-mingw32-g++.exe",
             "args": [
                 "-O2",
-                "${file}",
+                "${workspaceFolder}/src/main.cpp",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}.exe",
+                "${workspaceFolder}/src/main.exe",
                 "-I", "C:/msys64/ucrt64/include",
                 "-I", "${workspaceFolder}/src",
                 "-L", "C:/msys64/ucrt64/lib",

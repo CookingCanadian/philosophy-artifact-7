@@ -4,6 +4,7 @@
             "name": "Win32",
             "includePath": [
                 "C:/raylib/raylib/src/**",
+                "C:/msys64/ucrt64/include/**",
                 "${workspaceFolder}/**"
             ],
             "defines": [
@@ -13,10 +14,10 @@
                 "GRAPHICS_API_OPENGL_33",
                 "PLATFORM_DESKTOP"
             ],
-            "compilerPath": "C:/raylib/w64devkit/bin/gcc.exe",
-            "cStandard": "c99",
-            "cppStandard": "c++14",
-            "intelliSenseMode": "gcc-x64"
+            "compilerPath": "C:/msys64/ucrt64/bin/x86_64-w64-mingw32-g++.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-x64"
         },
         {
             "name": "Mac",
@@ -36,7 +37,7 @@
             ],
             "compilerPath": "/usr/bin/clang",
             "cStandard": "c11",
-            "cppStandard": "c++14",
+            "cppStandard": "c++17",
             "intelliSenseMode": "clang-x64"
         },
         {
@@ -54,7 +55,7 @@
             ],
             "compilerPath": "/usr/bin/clang",
             "cStandard": "c11",
-            "cppStandard": "c++14",
+            "cppStandard": "c++17",
             "intelliSenseMode": "clang-x64"
         }
     ],
