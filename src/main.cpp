@@ -199,6 +199,7 @@ void DrawSceneInterview() {
 
         float alpha = (sinf((float)GetTime() * 2.0f) * 0.5f + 0.5f) * 150 + 105;
         const char* hint = game.state.questionChosen >= 0 ? "press enter to ask" : "press 1, 2 or 3 to select";
+        // both hints left-aligned to tx so they don't jump around
         DT(hint, tx, CANVAS_H - 32, FS_HINT, { 200, 180, 120, (unsigned char)alpha });
 
         if (IsKeyPressed(KEY_ONE))   game.state.questionChosen = 0;
@@ -217,7 +218,8 @@ void DrawSceneInterview() {
         const char* cont = (lastDilemma && lastDuke) ? "press enter to make your choice"
                          : lastDilemma               ? "press enter to meet the next duke"
                                                      : "press enter to continue";
-        DT(cont, CANVAS_W/2 - MT(cont, FS_HINT)/2, CANVAS_H - 32, FS_HINT, { 200, 180, 120, (unsigned char)alpha });
+        // left-aligned to tx, same as the question hint above
+        DT(cont, tx, CANVAS_H - 32, FS_HINT, { 200, 180, 120, (unsigned char)alpha });
 
         if (IsKeyPressed(KEY_ENTER)) game.advanceDilemma();
     }

@@ -23,13 +23,20 @@
                 "-I", "C:/msys64/ucrt64/include",
                 "-I", "${workspaceFolder}/src",
                 "-L", "C:/msys64/ucrt64/lib",
-                "-lraylib",
+                "C:/msys64/ucrt64/lib/libraylib_static.a",
                 "-lopengl32",
                 "-lgdi32",
                 "-lwinmm",
                 "-static-libgcc",
-                "-static-libstdc++"
+                "-static-libstdc++",
+                "-mwindows"
             ],
+            "options": {
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": ["/c"]
+                }
+            },
             "dependsOn": ["embed assets"],
             "group": {
                 "kind": "build",
@@ -49,13 +56,20 @@
                 "-I", "C:/msys64/ucrt64/include",
                 "-I", "${workspaceFolder}/src",
                 "-L", "C:/msys64/ucrt64/lib",
-                "-lraylib",
+                "C:/msys64/ucrt64/lib/libraylib_static.a",
                 "-lopengl32",
                 "-lgdi32",
                 "-lwinmm",
                 "-static-libgcc",
-                "-static-libstdc++"
+                "-static-libstdc++",
+                "-mwindows"
             ],
+            "options": {
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": ["/c"]
+                }
+            },
             "dependsOn": ["embed assets"],
             "group": "build",
             "problemMatcher": ["$gcc"]
