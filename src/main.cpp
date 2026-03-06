@@ -263,7 +263,7 @@ void DrawSceneVerdict() {
     DrawLine(8, CANVAS_H - 28, CANVAS_W - 8, CANVAS_H - 28, { 100, 80, 40, 80 });
     float alpha = (sinf((float)GetTime() * 2.0f) * 0.5f + 0.5f) * 150 + 105;
     const char* hint = game.state.verdictSelection >= 0
-        ? "press enter to kneel and offer your seal"
+        ? "press enter to kneel and offer your service"
         : "press 1, 2 or 3 to select a duke";
     DT(hint, CANVAS_W/2 - MT(hint, FS_HINT)/2, CANVAS_H - 32, FS_HINT, { 200, 180, 120, (unsigned char)alpha });
 
